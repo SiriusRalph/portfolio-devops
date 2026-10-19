@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Sara Bouras</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <nav class="menu">
+      <a class="logo" href="#accueil">Mon&nbsp;Portfolio</a>
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="planche">
+    <section id="accueil" class="hero">
+      <!-- Carte profil (violette) -->
+      <div class="profil">
+        <p class="etiquette"><span class="losange" aria-hidden="true"></span> À propos de moi</p>
+
+        <ul class="rail" aria-label="Raccourcis">
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#apropos">Profil</a></li>
+          <li><a href="#projets">Portfolio</a></li>
+          <li><a href="#competences">Skills</a></li>
+        </ul>
+
+        <div class="avatar" aria-hidden="true">
+          <span>SB</span>
+        </div>
+
+        <h1>Bonjour, je suis <span>Sara Bouras</span></h1>
+        <p>Élève ingénieure en IA &amp; Big Data — passionnée par la Data et l’IA.</p>
+
+        <div class="badge" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <defs><path id="cercle" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
+            <text><textPath href="#cercle">DATA • IA • DEVOPS • CLOUD •</textPath></text>
+          </svg>
+          <span class="badge-coeur">★</span>
+        </div>
+      </div>
+
+      <!-- Colonne droite : grand titre + tuiles -->
+      <div class="vitrine">
+        <p class="titre-geant">Portfolio<span class="coin" aria-hidden="true"></span></p>
+
+        <div class="tuiles">
+          <a class="tuile tuile-visuel" href="#projets">
+            <span class="lecture" aria-hidden="true"></span>
+            <span class="bouton">Voir mes projets</span>
+          </a>
+
+          <div class="tuile tuile-stats">
+            <div class="stat stat-menthe"><strong>6</strong><span>Compétences</span></div>
+            <div class="stat stat-violet"><strong>3</strong><span>Projets</span></div>
+          </div>
+
+          <div class="tuile tuile-grise">
+            <span class="icone" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M4 10h3v3H4zm4 0h3v3H8zm4 0h3v3h-3zm-4-4h3v3H8zm4 0h3v3h-3zm0-4h3v3h-3zm4 8h3v3h-3zM2 14h20c0 4-3.5 7-9 7-5 0-8.5-2.5-11-7z"/></svg>
+            </span>
+            <span>Docker</span>
+          </div>
+
+          <div class="tuile tuile-duo">
+            <div class="duo-noir"><span class="orbe" aria-hidden="true"></span></div>
+            <div class="duo-jaune"><strong>CI/CD</strong><span>GitHub Actions</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos" class="bloc">
+      <h2>À propos</h2>
+      <p>J'apprends à livrer des applications de façon fiable et automatisée :
+         versionnement avec Git, conteneurisation avec Docker et intégration continue avec GitHub Actions.</p>
+    </section>
+
+    <section id="competences" class="bloc">
+      <h2>Compétences techniques</h2>
+      <ul class="cartes">
+        <li>HTML &amp; CSS</li>
+        <li>Git &amp; GitHub</li>
+        <li>Docker &amp; Nginx</li>
+        <li>Docker Compose</li>
+        <li>GitHub Actions</li>
+        <li>Linux</li>
+      </ul>
+    </section>
+
+    <section id="projets" class="bloc">
+      <h2>Projets réalisés</h2>
+      <div class="projets">
+        <article class="projet">
+          <h3>Portfolio conteneurisé</h3>
+          <p>Ce site, servi par Nginx dans un conteneur Docker.</p>
+        </article>
+        <article class="projet">
+          <h3>Pipeline CI/CD</h3>
+          <p>Tests automatiques et déploiement sur GitHub Pages à chaque push.</p>
+        </article>
+        <article class="projet">
+          <h3>Détection d'intrusions IoT à l'hôpital</h3>
+          <p>Modèle de machine learning (96 % de rappel) déployé avec un dashboard Streamlit sur Raspberry Pi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="bloc">
+      <h2>Contact</h2>
+      <p>Écrivez-moi : <a href="mailto:s.bouras@hestim.ma">s.bouras@hestim.ma</a></p>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p>© 2026 — Portfolio réalisé pendant l'atelier DevOps · Version 1</p>
+  </footer>
+</body>
+</html>

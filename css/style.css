@@ -1,0 +1,271 @@
+/* Portfolio DevOps — feuille de style (V2, style « bento ») */
+:root {
+  --principale: #111111;   /* noir des titres */
+  --accent: #8584d8;       /* violet de la carte profil */
+  --fond: #e6e6e6;         /* gris clair de la page */
+  --planche: #f7f7f7;      /* fond des cartes */
+  --texte: #1a1a1a;
+  --gris: #5f5f5f;
+  --rose: #eaa8f2;
+  --menthe: #a9d9d6;
+  --violet: #9d82d2;
+  --jaune: #ffc86b;
+  --rayon: 18px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Archivo", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--texte);
+  background: var(--fond);
+  line-height: 1.6;
+}
+
+/* En-tête et menu */
+.entete {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(230, 230, 230, .85);
+  backdrop-filter: blur(8px);
+}
+.menu {
+  max-width: 1100px; margin: auto; padding: 14px 20px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+}
+.menu a { color: var(--principale); text-decoration: none; }
+.logo { font-weight: 900; font-size: 1.2rem; letter-spacing: -.02em; }
+.menu ul { list-style: none; display: flex; gap: 6px; }
+.menu ul a {
+  display: block; padding: 6px 14px; border-radius: 30px;
+  font-weight: 600; font-size: .92rem; transition: background .2s, color .2s;
+}
+.menu ul a:hover { background: var(--principale); color: #fff; }
+
+/* Planche principale */
+.planche { max-width: 1100px; margin: auto; padding: 10px 20px 40px; }
+
+/* ===== Section d'accueil (bento) ===== */
+.hero {
+  display: grid; grid-template-columns: minmax(280px, 1fr) 1.75fr; gap: 22px;
+  background: var(--planche); border-radius: 26px; padding: 26px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .35);
+}
+
+/* Carte profil violette */
+.profil {
+  position: relative; display: flex; flex-direction: column; justify-content: flex-end;
+  min-height: 460px; padding: 70px 22px 24px 64px;
+  background: var(--accent); color: #fff; border-radius: var(--rayon);
+}
+.etiquette {
+  position: absolute; top: -2px; left: 0;
+  display: flex; align-items: center; gap: 8px;
+  background: var(--planche); color: var(--texte);
+  padding: 0 22px 10px 2px; border-bottom-right-radius: 16px;
+  font-size: .82rem; font-weight: 600;
+}
+.losange {
+  width: 10px; height: 10px; border: 2px solid var(--texte); transform: rotate(45deg);
+}
+
+/* Rail vertical à gauche de la carte */
+.rail {
+  position: absolute; left: 0; top: 70px; bottom: 24px; width: 50px;
+  list-style: none; display: flex; flex-direction: column; justify-content: space-around; align-items: center;
+}
+.rail a {
+  display: block; writing-mode: vertical-rl; transform: rotate(180deg);
+  color: #fff; text-decoration: none; font-size: .78rem; font-weight: 600; opacity: .85;
+}
+.rail a:hover { opacity: 1; text-decoration: underline; }
+
+/* Avatar : cercle rose cerclé de blanc */
+.avatar {
+  position: absolute; top: 34px; left: 50%; transform: translateX(-35%);
+  width: 170px; height: 170px; border-radius: 50%;
+  border: 4px solid #fff; padding: 8px;
+}
+.avatar span {
+  display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #f6c8fb, var(--rose));
+  color: var(--principale); font-weight: 900; font-size: 3.4rem; letter-spacing: -.04em;
+}
+
+.hero h1 {
+  font-size: 2.3rem; font-weight: 500; line-height: 1.1; letter-spacing: -.02em;
+  margin-top: 210px;
+}
+.hero h1 span { display: block; font-weight: 800; color: #fff; }
+.profil p { font-size: .9rem; margin-top: 12px; padding-right: 92px; opacity: .95; }
+
+/* Badge circulaire qui tourne */
+.badge {
+  position: absolute; right: 14px; bottom: 14px; width: 84px; height: 84px;
+  border-radius: 50%; background: var(--principale); color: #fff;
+  display: grid; place-items: center;
+}
+.badge svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; fill: #fff;
+  animation: tourner 14s linear infinite;
+}
+.badge-coeur {
+  width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #fff;
+  display: grid; place-items: center; font-size: .9rem;
+}
+@keyframes tourner { to { transform: rotate(360deg); } }
+
+/* Colonne droite */
+.vitrine { display: flex; flex-direction: column; gap: 18px; }
+.titre-geant {
+  position: relative; align-self: flex-start;
+  font-size: clamp(3rem, 7.5vw, 5.6rem); font-weight: 900;
+  line-height: .95; letter-spacing: -.045em; padding-right: 26px;
+}
+.coin, .tuile-stats .stat::after, .tuile-grise::after, .duo-jaune::after {
+  content: ""; position: absolute; top: 12px; right: 12px;
+  width: 9px; height: 9px; border-top: 2px solid currentColor; border-right: 2px solid currentColor;
+}
+.coin { top: 10px; right: 0; width: 14px; height: 14px; border-width: 3px; }
+
+.tuiles {
+  flex: 1; display: grid; gap: 14px;
+  grid-template-columns: 1fr 1fr .85fr;
+  grid-template-rows: 1.35fr 1fr;
+}
+.tuile { position: relative; border-radius: var(--rayon); overflow: hidden; min-height: 150px; }
+
+/* Tuile visuelle (motif feuillage en CSS) */
+.tuile-visuel {
+  grid-column: span 2;
+  display: grid; place-items: center; text-decoration: none;
+  background:
+    radial-gradient(ellipse 38% 60% at 50% 55%, #f28b82 0 55%, transparent 56%),
+    radial-gradient(circle at 46% 30%, #f6a39c 0 9%, transparent 10%),
+    radial-gradient(ellipse 30% 45% at 12% 80%, #4a9a7a 0 60%, transparent 61%),
+    radial-gradient(ellipse 25% 40% at 88% 20%, #3f8f74 0 60%, transparent 61%),
+    radial-gradient(ellipse 22% 35% at 85% 85%, #e5654f 0 60%, transparent 61%),
+    radial-gradient(ellipse 20% 30% at 15% 15%, #ef7d5d 0 60%, transparent 61%),
+    linear-gradient(135deg, #8fd3d1, #b9e4de);
+}
+.lecture {
+  width: 48px; height: 48px; border-radius: 50%; background: #fff;
+  display: grid; place-items: center; box-shadow: 0 6px 16px rgba(0, 0, 0, .2);
+  transition: transform .25s;
+}
+.lecture::before {
+  content: ""; margin-left: 4px;
+  border-left: 13px solid var(--principale); border-top: 8px solid transparent; border-bottom: 8px solid transparent;
+}
+.tuile-visuel:hover .lecture { transform: scale(1.12); }
+.bouton {
+  position: absolute; left: 14px; bottom: 14px;
+  display: inline-block; padding: 8px 18px;
+  background: #fff; color: var(--principale); border-radius: 30px;
+  text-decoration: none; font-weight: 700; font-size: .85rem;
+}
+
+/* Tuile statistiques (menthe + violet) */
+.tuile-stats { display: grid; grid-template-rows: 1fr 1fr; }
+.stat {
+  position: relative; display: flex; flex-direction: column; justify-content: center;
+  padding: 14px 16px; color: var(--principale);
+}
+.stat strong { font-size: 1.9rem; font-weight: 800; line-height: 1; }
+.stat span { font-size: .85rem; }
+.stat-menthe { background: var(--menthe); }
+.stat-violet { background: var(--violet); color: #fff; }
+
+/* Tuile grise */
+.tuile-grise {
+  background: var(--gris); color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
+  font-size: .9rem;
+}
+
+/* Tuile duo (noir + jaune) */
+.tuile-duo { grid-column: span 2; display: grid; grid-template-columns: 1fr 1.15fr; background: var(--principale); }
+.duo-noir { display: grid; place-items: center; }
+.orbe {
+  width: 62px; height: 62px; border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255, 255, 255, .7), transparent 35%),
+    conic-gradient(from 40deg, #f28b82, #f6c177, #8fd3d1, #6a7fdb, #c18be0, #f28b82);
+  animation: tourner 10s linear infinite;
+}
+.duo-jaune {
+  position: relative; background: var(--jaune); border-radius: var(--rayon);
+  display: flex; flex-direction: column; justify-content: center; padding: 14px 18px;
+}
+.duo-jaune strong { font-size: 1.7rem; font-weight: 800; line-height: 1; }
+.duo-jaune span { font-size: .85rem; }
+
+/* ===== Blocs de contenu ===== */
+.bloc {
+  margin-top: 22px; padding: 34px 30px;
+  background: var(--planche); border-radius: 26px;
+}
+.bloc h2 {
+  color: var(--principale); margin-bottom: 18px;
+  font-size: 2rem; font-weight: 900; letter-spacing: -.03em; line-height: 1.1;
+}
+.bloc h2::after {
+  content: ""; display: inline-block; width: 12px; height: 12px; margin-left: 6px; vertical-align: top;
+  border-top: 3px solid var(--principale); border-right: 3px solid var(--principale);
+}
+.bloc > p { max-width: 65ch; font-size: 1.05rem; }
+
+.cartes { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.cartes li {
+  padding: 22px 16px; border-radius: 14px; text-align: center; font-weight: 700;
+  background: var(--menthe); transition: transform .2s;
+}
+.cartes li:nth-child(4n+2) { background: var(--accent); color: #fff; }
+.cartes li:nth-child(4n+3) { background: var(--jaune); }
+.cartes li:nth-child(4n+4) { background: var(--principale); color: #fff; }
+.cartes li:hover { transform: translateY(-4px); }
+
+.projets { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.projet {
+  border-radius: var(--rayon); padding: 26px; min-height: 160px;
+  background: var(--accent); color: #fff;
+  display: flex; flex-direction: column; justify-content: flex-end;
+}
+.projet:nth-child(2) { background: var(--jaune); color: var(--principale); }
+.projet:nth-child(3) { background: var(--menthe); color: var(--principale); }
+.projet h3 { font-size: 1.4rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: 6px; }
+
+#contact { background: var(--principale); color: #fff; }
+#contact h2 { color: #fff; }
+#contact h2::after { border-color: #fff; }
+#contact a { color: var(--jaune); font-weight: 700; }
+
+/* Pied de page */
+.pied { color: #555; text-align: center; padding: 10px 20px 30px; font-size: .88rem; }
+
+/* Accessibilité : moins d'animations si demandé */
+@media (prefers-reduced-motion: reduce) {
+  .badge svg, .orbe { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Responsive : tablettes */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .tuiles { grid-template-rows: auto; }
+}
+
+/* Responsive : petits écrans */
+@media (max-width: 600px) {
+  .planche { padding: 6px 12px 30px; }
+  .hero { padding: 14px; border-radius: 20px; }
+  .hero h1 { font-size: 1.9rem; }
+  .menu ul { gap: 2px; font-size: .9rem; margin-top: 8px; }
+  .menu ul a { padding: 4px 10px; }
+  .tuiles { grid-template-columns: 1fr 1fr; }
+  .tuile-visuel, .tuile-duo { grid-column: span 2; }
+  .bloc { padding: 26px 18px; }
+  .bloc h2 { font-size: 1.6rem; }
+}
