@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projets — Sara Bouras</title>
+  <meta name="description" content="Projets de Sara Bouras : IA, Machine Learning, Data, Web et DevOps.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="entete">
+    <nav class="menu">
+      <a class="logo" href="index.html">Sara&nbsp;Bouras<span>.</span></a>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projets.html" aria-current="page">Projets</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="planche">
+    <section class="page-tete">
+      <div class="page-titre">
+        <p class="etiquette"><span class="losange" aria-hidden="true"></span> Portfolio</p>
+        <h1>Projets</h1>
+        <p>De la donnée brute au modèle déployé : Machine Learning, systèmes multi-agents, robotique,
+          applications web et chaîne DevOps.</p>
+      </div>
+      <div class="page-chiffres">
+        <div class="stat stat-menthe"><strong>7</strong><span>Projets</span></div>
+        <div class="stat stat-violet"><strong>4</strong><span>Dépôts GitHub</span></div>
+        <div class="stat stat-jaune"><strong>2</strong><span>En cours</span></div>
+      </div>
+    </section>
+
+    <nav class="sommaire" aria-label="Catégories">
+      <a href="#ia-data">IA &amp; Data</a>
+      <a href="#web">Web</a>
+      <a href="#devops">DevOps</a>
+    </nav>
+
+    <!-- ===== IA & Data ===== -->
+    <section id="ia-data" class="bloc">
+      <h2>IA &amp; Data</h2>
+
+      <article id="iot" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">Avril 2026</p>
+            <h3>IoT Hospital Intrusion Detection System</h3>
+          </div>
+          <span class="statut statut-fini">Terminé</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Détecter les intrusions sur les objets connectés d’un hôpital, puis faire tourner la détection
+              directement sur un équipement embarqué.</p>
+            <ul class="puces">
+              <li>Travail sur <strong>200 000 échantillons</strong> du jeu de données CICIoT2023 :
+                preprocessing et feature engineering.</li>
+              <li>Comparaison de <strong>7 modèles de classification</strong> ; un arbre de décision optimisé
+                a été retenu.</li>
+              <li>Déploiement du modèle et d’un <strong>dashboard Streamlit</strong> de monitoring temps réel sur
+                Raspberry Pi.</li>
+              <li>Optimisation de la transmission des données pour réduire la consommation énergétique.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <div class="chiffres">
+              <div><strong>96 %</strong><span>de rappel</span></div>
+              <div><strong>88,17 %</strong><span>d’accuracy</span></div>
+            </div>
+            <ul class="tags"><li>Python</li><li>Pandas</li><li>Scikit-learn</li><li>Streamlit</li><li>Raspberry Pi</li></ul>
+            <a class="pastille" href="https://github.com/SiriusRalph/iomt-intrusion-detection">Voir sur GitHub →</a>
+          </aside>
+        </div>
+      </article>
+
+      <article id="multi-agents" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">Mars – Avril 2026</p>
+            <h3>Système IA multi-agents médical</h3>
+          </div>
+          <span class="statut statut-fini">Terminé</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Un système qui simule une orientation clinique préliminaire en confiant chaque étape à un
+              agent spécialisé.</p>
+            <ul class="puces">
+              <li>Conception d’une architecture de <strong>4 agents spécialisés</strong>, orchestrés avec
+                LangGraph.</li>
+              <li>Intégration d’outils cliniques via le protocole <strong>MCP</strong>.</li>
+              <li>API FastAPI et interface React, avec des modèles exécutés en local via Ollama.</li>
+              <li>README avec la documentation complète du projet.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <div class="chiffres">
+              <div><strong>4</strong><span>agents spécialisés</span></div>
+            </div>
+            <ul class="tags"><li>Python</li><li>LangGraph</li><li>LangChain</li><li>FastAPI</li><li>React</li><li>Ollama</li><li>MCP</li></ul>
+            <a class="pastille" href="https://github.com/SiriusRalph/Projet-agentic-AI">Voir sur GitHub →</a>
+          </aside>
+        </div>
+      </article>
+
+      <article id="robot" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">Octobre 2026 – en cours</p>
+            <h3>Robot d’inspection autonome — dégâts post-séisme</h3>
+          </div>
+          <span class="statut statut-cours">En cours</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Un robot qui inspecte un bâtiment endommagé par un séisme pour évaluer les dégâts sans
+              exposer d’équipe humaine.</p>
+            <ul class="puces">
+              <li>Création du monde de simulation dans <strong>Gazebo</strong>.</li>
+              <li>Cartographie du bâtiment avec <strong>SLAM Toolbox</strong>.</li>
+              <li>En cours : navigation autonome avec <strong>Nav2</strong> et détection visuelle avec
+                <strong>YOLOv8</strong>.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <ul class="tags"><li>Gazebo</li><li>SLAM Toolbox</li><li>Nav2</li><li>YOLOv8</li></ul>
+          </aside>
+        </div>
+      </article>
+
+      <article id="briefing" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">En cours</p>
+            <h3>AI Business Briefing</h3>
+          </div>
+          <span class="statut statut-cours">En cours</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Un outil qui transforme un fichier Excel ou CSV en synthèse business automatisée.</p>
+            <ul class="puces">
+              <li>Évolution des <strong>KPI</strong> et détection des variations significatives.</li>
+              <li>Pistes de causes potentielles et points d’attention à surveiller.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <ul class="tags"><li>React</li><li>TypeScript</li></ul>
+          </aside>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== Web ===== -->
+    <section id="web" class="bloc">
+      <h2>Web</h2>
+
+      <article id="etudafrik" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">Mai 2026</p>
+            <h3>Etudafrik — orientation scolaire intelligente</h3>
+          </div>
+          <span class="statut statut-fini">Terminé</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Une plateforme qui centralise les informations des établissements privés marocains pour que
+              les étudiants africains puissent rechercher et candidater depuis une seule interface.</p>
+            <ul class="puces">
+              <li>Système de <strong>recommandation via l’API Grok</strong>, qui propose des établissements
+                adaptés au profil de l’étudiant.</li>
+              <li><strong>Trois dashboards</strong> dédiés : étudiants, écoles et administrateurs.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <div class="chiffres">
+              <div><strong>3</strong><span>espaces utilisateurs</span></div>
+            </div>
+            <ul class="tags"><li>React</li><li>TypeScript</li><li>Supabase</li><li>Grok API</li></ul>
+            <a class="pastille" href="https://github.com/SiriusRalph/etudafrik">Voir sur GitHub →</a>
+          </aside>
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== DevOps ===== -->
+    <section id="devops" class="bloc">
+      <h2>DevOps</h2>
+
+      <article id="portfolio" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">Octobre 2026 · Atelier DevOps HESTIM</p>
+            <h3>Portfolio conteneurisé</h3>
+          </div>
+          <span class="statut statut-fini">En ligne</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Ce site, servi par Nginx dans un conteneur Docker.</p>
+            <ul class="puces">
+              <li>Image <strong>portfolio:v1</strong> construite à partir de nginx:alpine.</li>
+              <li>Démarrage et arrêt en une commande avec <strong>Docker Compose</strong>.</li>
+              <li>Six tests automatisés (unittest) qui vérifient la structure de la page.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <ul class="tags"><li>HTML &amp; CSS</li><li>Docker</li><li>Nginx</li><li>Docker Compose</li></ul>
+            <a class="pastille" href="https://github.com/SiriusRalph/portfolio-devops">Voir sur GitHub →</a>
+          </aside>
+        </div>
+      </article>
+
+      <article id="pipeline" class="fiche">
+        <header class="fiche-tete">
+          <div>
+            <p class="fiche-date">Octobre 2026 · Atelier DevOps HESTIM</p>
+            <h3>Pipeline CI/CD</h3>
+          </div>
+          <span class="statut statut-fini">Actif</span>
+        </header>
+        <div class="fiche-corps">
+          <div class="fiche-texte">
+            <p>Tests automatiques, image Docker et déploiement sur GitHub Pages à chaque push.</p>
+            <ul class="puces">
+              <li>Pipeline GitHub Actions <strong>test → build → deploy</strong> : une erreur bloque la suite.</li>
+              <li>Chaque évolution passe par une branche et une Pull Request vérifiée par la CI.</li>
+              <li>Publication automatique sur GitHub Pages à chaque fusion dans main.</li>
+            </ul>
+          </div>
+          <aside class="fiche-cote">
+            <ul class="tags"><li>GitHub Actions</li><li>Git</li><li>Python unittest</li><li>GitHub Pages</li></ul>
+          </aside>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <nav class="pied-liens" aria-label="Pied de page">
+      <a href="index.html">Accueil</a><a href="projets.html">Projets</a><a href="parcours.html">Parcours</a><a href="https://github.com/SiriusRalph">GitHub</a>
+    </nav>
+    <p>© 2026 — Portfolio réalisé pendant l'atelier DevOps · Version 2</p>
+  </footer>
+</body>
+</html>

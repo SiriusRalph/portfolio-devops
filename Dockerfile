@@ -6,7 +6,7 @@ LABEL org.opencontainers.image.title="portfolio-devops" \
       org.opencontainers.image.description="Portfolio HTML/CSS servi par Nginx"
 
 # Copie du site dans le dossier servi par Nginx
-COPY index.html /usr/share/nginx/html/
+COPY *.html /usr/share/nginx/html/
 COPY css/ /usr/share/nginx/html/css/
 
 # Correctif : rendre les fichiers lisibles par l'utilisateur nginx
