@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Sara Bouras</title>
+  <meta name="description" content="Sara Bouras, élève ingénieure en IA &amp; Big Data à HESTIM : projets Data Science, Machine Learning, BI et DevOps.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
@@ -12,11 +13,11 @@
 <body>
   <header class="entete">
     <nav class="menu">
-      <a class="logo" href="#accueil">Mon&nbsp;Portfolio</a>
+      <a class="logo" href="index.html">Sara&nbsp;Bouras<span>.</span></a>
       <ul>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#competences">Compétences</a></li>
-        <li><a href="#projets">Projets</a></li>
+        <li><a href="index.html" aria-current="page">Accueil</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="parcours.html">Parcours</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -24,14 +25,14 @@
 
   <main class="planche">
     <section id="accueil" class="hero">
-      <!-- Carte profil (violette) -->
+      <!-- Carte profil -->
       <div class="profil">
         <p class="etiquette"><span class="losange" aria-hidden="true"></span> À propos de moi</p>
 
         <ul class="rail" aria-label="Raccourcis">
           <li><a href="#contact">Contact</a></li>
-          <li><a href="#apropos">Profil</a></li>
-          <li><a href="#projets">Portfolio</a></li>
+          <li><a href="parcours.html">Parcours</a></li>
+          <li><a href="projets.html">Projets</a></li>
           <li><a href="#competences">Skills</a></li>
         </ul>
 
@@ -46,7 +47,7 @@
         <div class="sceau" aria-hidden="true">
           <svg viewBox="0 0 100 100">
             <defs><path id="cercle" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0"/></defs>
-            <text><textPath href="#cercle">DATA • IA • DEVOPS • CLOUD •</textPath></text>
+            <text><textPath href="#cercle">DATA • IA • BIG DATA • ML •</textPath></text>
           </svg>
           <span class="sceau-coeur">★</span>
         </div>
@@ -57,26 +58,24 @@
         <p class="titre-geant">Portfolio<span class="coin" aria-hidden="true"></span></p>
 
         <div class="tuiles">
-          <a class="tuile tuile-visuel" href="#projets">
+          <a class="tuile tuile-visuel" href="projets.html">
             <span class="lecture" aria-hidden="true"></span>
             <span class="bouton">Voir mes projets</span>
           </a>
 
           <div class="tuile tuile-stats">
-            <div class="stat stat-menthe"><strong>7</strong><span>Compétences</span></div>
-            <div class="stat stat-violet"><strong>3</strong><span>Projets</span></div>
+            <div class="stat stat-menthe"><strong>7</strong><span>Projets</span></div>
+            <div class="stat stat-violet"><strong>2</strong><span>Stages</span></div>
           </div>
 
-          <div class="tuile tuile-grise">
-            <span class="icone" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M4 10h3v3H4zm4 0h3v3H8zm4 0h3v3h-3zm-4-4h3v3H8zm4 0h3v3h-3zm0-4h3v3h-3zm4 8h3v3h-3zM2 14h20c0 4-3.5 7-9 7-5 0-8.5-2.5-11-7z"/></svg>
-            </span>
-            <span>Docker</span>
-          </div>
+          <a class="tuile tuile-grise" href="parcours.html#certifications">
+            <strong class="tuile-chiffre">4</strong>
+            <span>Certifications</span>
+          </a>
 
           <div class="tuile tuile-duo">
             <div class="duo-noir"><span class="orbe" aria-hidden="true"></span></div>
-            <div class="duo-jaune"><strong>CI/CD</strong><span>GitHub Actions</span></div>
+            <div class="duo-jaune"><strong>96 %</strong><span>de rappel — détection d’intrusions IoT</span></div>
           </div>
         </div>
       </div>
@@ -84,49 +83,105 @@
 
     <section id="apropos" class="bloc">
       <h2>À propos</h2>
-      <p>J'apprends à livrer des applications de façon fiable et automatisée :
-         versionnement avec Git, conteneurisation avec Docker et intégration continue avec GitHub Actions.</p>
+      <div class="intro">
+        <div class="intro-texte">
+          <p class="chapeau">Élève-ingénieure en dernière année à <strong>HESTIM</strong>, spécialisée en
+            Intelligence Artificielle et Big Data.</p>
+          <p>J’aime les projets de bout en bout : collecte et nettoyage des données, modélisation prédictive,
+            puis déploiement et visualisation. Mes stages m’ont fait passer de la Business Intelligence
+            (Power BI, DAX, Power Apps) au test automatisé (Python, Selenium), et mes projets vont du
+            Machine Learning embarqué sur Raspberry Pi aux systèmes multi-agents.</p>
+          <p>Pendant l’atelier DevOps, j’ai aussi appris à livrer de façon fiable et automatisée :
+            versionnement avec Git, conteneurisation avec Docker et intégration continue avec GitHub Actions.</p>
+          <p class="recherche"><span class="point" aria-hidden="true"></span><span>À la recherche d’un
+            <strong>stage de fin d’études</strong> en Data Science / Machine Learning.</span></p>
+        </div>
+        <dl class="faits">
+          <div><dt>Basée à</dt><dd>Casablanca, Maroc</dd></div>
+          <div><dt>Formation</dt><dd>Cycle ingénieur IA &amp; Big Data — 3<sup>e</sup> année</dd></div>
+          <div><dt>Dernier stage</dt><dd>BI / Data — Groupe Construlting Sigman</dd></div>
+          <div><dt>Langues</dt><dd>Français, Anglais (courant) · Arabe (natif)</dd></div>
+        </dl>
+      </div>
     </section>
 
     <section id="competences" class="bloc">
       <h2>Compétences techniques</h2>
-      <ul class="cartes">
-        <li>HTML &amp; CSS</li>
-        <li>Git &amp; GitHub</li>
-        <li>Docker &amp; Nginx</li>
-        <li>Docker Compose</li>
-        <li>GitHub Actions</li>
-        <li>Linux</li>
-        <li>Kubernetes (notions)</li>
-      </ul>
+      <div class="groupes">
+        <div class="groupe">
+          <h3>Programmation</h3>
+          <ul class="tags"><li>Python</li><li>SQL</li><li>TypeScript</li></ul>
+        </div>
+        <div class="groupe">
+          <h3>Data &amp; ML</h3>
+          <ul class="tags"><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>Matplotlib</li><li>Machine Learning</li><li>LangGraph</li></ul>
+        </div>
+        <div class="groupe">
+          <h3>BI &amp; Outils</h3>
+          <ul class="tags"><li>Power BI</li><li>Power Query / M</li><li>DAX</li><li>Power Apps</li><li>SharePoint</li><li>Excel</li></ul>
+        </div>
+        <div class="groupe">
+          <h3>Web</h3>
+          <ul class="tags"><li>React.js</li><li>HTML &amp; CSS</li><li>JavaScript</li><li>FastAPI</li><li>Streamlit</li></ul>
+        </div>
+        <div class="groupe">
+          <h3>Bases de données</h3>
+          <ul class="tags"><li>MySQL</li><li>MongoDB</li><li>Supabase</li><li>SQLite</li></ul>
+        </div>
+        <div class="groupe groupe-devops">
+          <h3>DevOps</h3>
+          <ul class="tags"><li>Git &amp; GitHub</li><li>Docker &amp; Nginx</li><li>Docker Compose</li><li>GitHub Actions</li><li>Linux</li><li>Kubernetes (notions)</li></ul>
+        </div>
+      </div>
     </section>
 
     <section id="projets" class="bloc">
-      <h2>Projets réalisés</h2>
+      <div class="bloc-tete">
+        <h2>Projets réalisés</h2>
+        <a class="lien-fleche" href="projets.html">Tous les projets <span aria-hidden="true">→</span></a>
+      </div>
       <div class="projets">
         <article class="projet">
-          <h3>Portfolio conteneurisé</h3>
-          <p>Ce site, servi par Nginx dans un conteneur Docker.</p>
-        </article>
-        <article class="projet">
-          <h3>Pipeline CI/CD</h3>
-          <p>Tests automatiques, image Docker et déploiement sur GitHub Pages à chaque push.</p>
-        </article>
-        <article class="projet">
+          <p class="projet-date">Avril 2026</p>
           <h3>Détection d'intrusions IoT à l'hôpital</h3>
           <p>Modèle de machine learning (96 % de rappel) déployé avec un dashboard Streamlit sur Raspberry Pi.</p>
+          <a class="projet-lien" href="projets.html#iot">Lire le détail →</a>
+        </article>
+        <article class="projet">
+          <p class="projet-date">Mars – Avr. 2026</p>
+          <h3>Système IA multi-agents médical</h3>
+          <p>Quatre agents spécialisés orchestrés avec LangGraph pour simuler une orientation clinique préliminaire.</p>
+          <a class="projet-lien" href="projets.html#multi-agents">Lire le détail →</a>
+        </article>
+        <article class="projet">
+          <p class="projet-date">Mai 2026</p>
+          <h3>Etudafrik</h3>
+          <p>Plateforme d’orientation scolaire avec recommandations d’établissements via l’API Grok.</p>
+          <a class="projet-lien" href="projets.html#etudafrik">Lire le détail →</a>
         </article>
       </div>
     </section>
 
     <section id="contact" class="bloc">
       <h2>Contact</h2>
-      <p>Écrivez-moi : <a href="mailto:s.bouras@hestim.ma">s.bouras@hestim.ma</a></p>
-      <p>Retrouvez mes projets sur GitHub.</p>
+      <div class="contact-grille">
+        <div>
+          <p>Écrivez-moi : <a href="mailto:s.bouras@hestim.ma">s.bouras@hestim.ma</a></p>
+          <p>Retrouvez mes projets sur GitHub.</p>
+        </div>
+        <ul class="contact-liens">
+          <li><a class="pastille" href="mailto:s.bouras@hestim.ma">E-mail</a></li>
+          <li><a class="pastille" href="https://github.com/SiriusRalph">GitHub</a></li>
+          <li><span class="pastille pastille-calme">Casablanca, Maroc</span></li>
+        </ul>
+      </div>
     </section>
   </main>
 
   <footer class="pied">
+    <nav class="pied-liens" aria-label="Pied de page">
+      <a href="index.html">Accueil</a><a href="projets.html">Projets</a><a href="parcours.html">Parcours</a><a href="https://github.com/SiriusRalph">GitHub</a>
+    </nav>
     <p>© 2026 — Portfolio réalisé pendant l'atelier DevOps · Version 2</p>
   </footer>
 </body>
