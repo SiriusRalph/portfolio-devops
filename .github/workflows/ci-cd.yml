@@ -1,0 +1,81 @@
+name: CI-CD Portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # 1. TEST : vérifier la structure du site
+  test:
+    name: Tests automatisés
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Lancer les tests
+        run: python -m unittest discover -s tests -v
+
+  # 2. BUILD : construire et essayer l'image Docker
+  build:
+    name: Construction de l'image Docker
+    needs: test
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - name: docker build
+        run: docker build -t portfolio:${{ github.sha }} .
+      - name: Test de fumée du conteneur
+        run: |
+          docker run -d --name essai -p 8080:80 portfolio:${{ github.sha }}
+          sleep 3
+          curl -sf http://localhost:8080 | grep -q 'id="contact"'
+          docker rm -f essai
+
+  # 3. RELEASE (optionnel) : publier l'image sur Docker Hub
+  release:
+    name: Publication Docker Hub
+    needs: build
+    if: github.event_name == 'push' && vars.DOCKERHUB_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: docker/login-action@v4
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-devops:latest
+
+  # 4. DEPLOY : publier les fichiers statiques sur GitHub Pages
+  deploy:
+    name: Déploiement GitHub Pages
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/configure-pages@v6
+      - name: Préparer le site
+        run: mkdir _site && cp -r index.html css _site/
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v5
