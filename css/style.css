@@ -101,17 +101,17 @@ body {
 .profil p { font-size: .9rem; margin-top: 12px; padding-right: 92px; opacity: .95; }
 
 /* Badge circulaire qui tourne */
-.badge {
+.sceau {
   position: absolute; right: 14px; bottom: 14px; width: 84px; height: 84px;
   border-radius: 50%; background: var(--principale); color: #fff;
   display: grid; place-items: center;
 }
-.badge svg {
+.sceau svg {
   position: absolute; inset: 0; width: 100%; height: 100%;
   font-size: 10.5px; font-weight: 700; letter-spacing: 1.5px; fill: #fff;
   animation: tourner 14s linear infinite;
 }
-.badge-coeur {
+.sceau-coeur {
   width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid #fff;
   display: grid; place-items: center; font-size: .9rem;
 }
@@ -247,7 +247,7 @@ body {
 
 /* Accessibilité : moins d'animations si demandé */
 @media (prefers-reduced-motion: reduce) {
-  .badge svg, .orbe { animation: none; }
+  .sceau svg, .orbe { animation: none; }
   html { scroll-behavior: auto; }
 }
 
