@@ -8,13 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <meta name="theme-color" content="#3b2418">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="entete">
+    <div class="progression" aria-hidden="true"></div>
     <nav class="menu">
       <a class="logo" href="index.html">Sara&nbsp;Bouras<span>.</span></a>
-      <ul>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-liens"><span></span><span></span><span></span></button>
+      <ul id="menu-liens">
         <li><a href="index.html" aria-current="page">Accueil</a></li>
         <li><a href="projets.html">Projets</a></li>
         <li><a href="parcours.html">Parcours</a></li>
@@ -56,9 +60,15 @@
       <!-- Colonne droite : grand titre + tuiles -->
       <div class="vitrine">
         <p class="titre-geant">Portfolio<span class="coin" aria-hidden="true"></span></p>
+        <p class="roles">Je conçois <span class="mot" data-mots="des modèles de Machine Learning|des dashboards Power BI|des systèmes multi-agents|des pipelines CI/CD|des applications web">des modèles de Machine Learning</span></p>
 
         <div class="tuiles">
           <a class="tuile tuile-visuel" href="projets.html">
+            <span class="blob b1" aria-hidden="true"></span>
+            <span class="blob b2" aria-hidden="true"></span>
+            <span class="blob b3" aria-hidden="true"></span>
+            <span class="blob b4" aria-hidden="true"></span>
+            <span class="blob b5" aria-hidden="true"></span>
             <span class="lecture" aria-hidden="true"></span>
             <span class="bouton">Voir mes projets</span>
           </a>
@@ -122,7 +132,7 @@
         </div>
         <div class="groupe">
           <h3>Web</h3>
-          <ul class="tags"><li>React.js</li><li>HTML &amp; CSS</li><li>JavaScript</li><li>FastAPI</li><li>Streamlit</li></ul>
+          <ul class="tags"><li>React.js</li><li>HTML &amp; CSS</li><li>JavaScript</li><li>FastAPI</li><li>Streamlit</li><li>Selenium</li></ul>
         </div>
         <div class="groupe">
           <h3>Bases de données</h3>
@@ -167,10 +177,12 @@
       <div class="contact-grille">
         <div>
           <p>Écrivez-moi : <a href="mailto:s.bouras@hestim.ma">s.bouras@hestim.ma</a></p>
+          <p>Appelez-moi : <a href="tel:+212698650706">+212 6 98 65 07 06</a></p>
           <p>Retrouvez mes projets sur GitHub.</p>
         </div>
         <ul class="contact-liens">
           <li><a class="pastille" href="mailto:s.bouras@hestim.ma">E-mail</a></li>
+          <li><a class="pastille" href="tel:+212698650706">Téléphone</a></li>
           <li><a class="pastille" href="https://github.com/SiriusRalph">GitHub</a></li>
           <li><span class="pastille pastille-calme">Casablanca, Maroc</span></li>
         </ul>
@@ -184,5 +196,6 @@
     </nav>
     <p>© 2026 — Portfolio réalisé pendant l'atelier DevOps · Version 2</p>
   </footer>
+  <a class="haut" href="#" aria-label="Revenir en haut de la page">↑</a>
 </body>
 </html>

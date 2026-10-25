@@ -8,13 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap">
+  <meta name="theme-color" content="#3b2418">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <header class="entete">
+    <div class="progression" aria-hidden="true"></div>
     <nav class="menu">
       <a class="logo" href="index.html">Sara&nbsp;Bouras<span>.</span></a>
-      <ul>
+      <button class="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-liens"><span></span><span></span><span></span></button>
+      <ul id="menu-liens">
         <li><a href="index.html">Accueil</a></li>
         <li><a href="projets.html">Projets</a></li>
         <li><a href="parcours.html" aria-current="page">Parcours</a></li>
@@ -146,5 +150,6 @@
     </nav>
     <p>© 2026 — Portfolio réalisé pendant l'atelier DevOps · Version 2</p>
   </footer>
+  <a class="haut" href="#" aria-label="Revenir en haut de la page">↑</a>
 </body>
 </html>
